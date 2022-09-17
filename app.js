@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require("express");
 const mysql = require("mysql");
 
@@ -5,8 +6,8 @@ const mysql = require("mysql");
 const db = mysql.createConnection({
   host     : 'localhost',
   user     : 'root',
-  password : '',
-  database : 'acmbackend'
+  password : process.env.PASSWORD,
+  database : process.env.DATABASE
 });
 
 db.connect(function(err){
